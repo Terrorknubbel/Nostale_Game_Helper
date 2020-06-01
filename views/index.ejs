@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/main.css">
+    <title>NosBasar Calc</title>
+</head>
+<body>
+
+    <h1>
+        NosBasar Rechner
+    </h1>
+    <hr>
+    <form action="">
+        <input id="Talerpreis" type="text" placeholder="Talerpreis">
+        <input id="Update" type="submit" value="Update">
+    </form>
+ 
+    <table>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Taler
+            </th>
+            <th>
+                Talerwert
+            </th>
+            <th>
+                Basarwert
+            </th>
+            <th>
+                Kaufen
+            </th>
+            <th>
+                Differenz
+            </th>
+
+        </tr>
+        <% for(var i=0; i < items.length; i++){ %>
+            <tr>
+                <td>
+                    <%= items[i].Name %>
+                </td>
+                <td class="Taler">
+                    <%= items[i].Taler %>
+                </td>
+                <td class="Talerwert">
+                    <%= items[i].Talerwert %>
+                </td>
+                <td class="Basarwert">
+                    <%= items[i].Basarwert %>
+                </td>
+                <td class="Kaufen">
+
+                </td>
+                <td class="Diff">
+
+                </td>
+            </tr>
+            <% } %>
+    </table>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/calc.js"></script>
+</body>
+</html>
