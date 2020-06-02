@@ -19,6 +19,7 @@
  
     <table>
         <tr>
+            <th style="display:none"></th>
             <th>
                 Name
             </th>
@@ -41,6 +42,9 @@
         </tr>
         <% for(var i=0; i < items.length; i++){ %>
             <tr>
+                <td style="display:none" class="id">
+                    <%= items[i].id %>
+                </td>
                 <td>
                     <%= items[i].Name %>
                 </td>
@@ -51,7 +55,8 @@
                     <%= items[i].Talerwert %>
                 </td>
                 <td class="Basarwert">
-                    <%= items[i].Basarwert %>
+                    <input type="text" value='<%= items[i].Basarwert %>'>
+                    
                 </td>
                 <td class="Kaufen">
 
@@ -62,7 +67,9 @@
             </tr>
             <% } %>
     </table>
-
+    <form action="updatedb" id="updatedb">
+        <input type="submit" value="Update DB">
+    </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/calc.js"></script>
 </body>
