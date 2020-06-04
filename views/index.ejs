@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/main.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
     <title>NosBasar Calc</title>
 </head>
 <body>
@@ -17,60 +18,66 @@
         <input id="Update" type="submit" value="Update">
     </form>
  
-    <table>
-        <tr>
-            <th style="display:none"></th>
-            <th>
-                Name
-            </th>
-            <th>
-                Taler
-            </th>
-            <th>
-                Talerwert
-            </th>
-            <th>
-                Basarwert
-            </th>
-            <th>
-                Kaufen
-            </th>
-            <th>
-                Differenz
-            </th>
-
-        </tr>
-        <% for(var i=0; i < items.length; i++){ %>
+    <table class="display">
+        <thead>
             <tr>
-                <td style="display:none" class="id">
-                    <%= items[i].id %>
-                </td>
-                <td>
-                    <%= items[i].Name %>
-                </td>
-                <td class="Taler">
-                    <%= items[i].Taler %>
-                </td>
-                <td class="Talerwert">
-                    <%= items[i].Talerwert %>
-                </td>
-                <td class="Basarwert">
-                    <input type="text" value='<%= items[i].Basarwert %>'>
-                    
-                </td>
-                <td class="Kaufen">
-
-                </td>
-                <td class="Diff">
-
-                </td>
+                <th style="display:none"></th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Taler
+                </th>
+                <th>
+                    Talerwert
+                </th>
+                <th>
+                    Basarwert
+                </th>
+                <th>
+                    Kaufen
+                </th>
+                <th>
+                    Differenz
+                </th>
+    
             </tr>
-            <% } %>
+        </thead>
+        <tbody>
+            <% for(var i=0; i < items.length; i++){ %>
+                <tr>
+                    <td style="display:none" class="id">
+                        <%= items[i].id %>
+                    </td>
+                    <td>
+                        <%= items[i].Name %>
+                    </td>
+                    <td class="Taler">
+                        <%= items[i].Taler %>
+                    </td>
+                    <td class="Talerwert">
+                        <%= items[i].Talerwert %>
+                    </td>
+                    <td class="Basarwert">
+                        <input type="text" value='<%= items[i].Basarwert %>'>
+                        
+                    </td>
+                    <td class="Kaufen">
+    
+                    </td>
+                    <td class="Diff">
+    
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+       
     </table>
     <form action="updatedb" id="updatedb">
         <input type="submit" value="Update DB">
     </form>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="assets/calc.js"></script>
 </body>
 </html>
