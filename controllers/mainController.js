@@ -2,10 +2,10 @@ var mysql = require('mysql');
 
 
 var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "Nosbasar"
+  host: "sql202.epizy.com",
+  user: "epiz_25625395",
+  password: "Wolfi22cool",
+  database: "epiz_25625395_nosbasar"
 });
 
 
