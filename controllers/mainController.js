@@ -2,10 +2,10 @@ var mysql = require('mysql');
 
 
 var con = mysql.createConnection({
-  host: "sql202.epizy.com",
-  user: "epiz_25625395",
-  password: "Wolfi22cool",
-  database: "epiz_25625395_nosbasar"
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "nosbasar"
 });
 
 
@@ -20,7 +20,7 @@ module.exports = function(app){
     });
 
     app.post('/updatedb', function (req, res) {
-
+        
         console.log(req.body);
         var sql = "UPDATE items SET Basarwert = '"+ req.body.Basarwert +"' WHERE id = '"+ req.body.id +"'";
         con.query(sql, function (err, result) {

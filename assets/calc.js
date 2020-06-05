@@ -24,9 +24,9 @@ $(function(){
                 'Basarwert' : Basarwert
             }; //Encode form elements for submission
     
-    
+            console.log("Form data: " + form_data);
             $.post( post_url, form_data, function( response ) {
-                console.log( response );
+                console.log( "Response: " + response );
                 });
 
         });
