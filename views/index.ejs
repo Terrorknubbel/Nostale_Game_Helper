@@ -18,7 +18,7 @@
         <input id="Update" type="submit" value="Update">
     </form>
  
-    <table class="display">
+    <table class="display" id="maintable">
         <thead>
             <tr>
                 <th style="display:none"></th>
@@ -40,7 +40,9 @@
                 <th>
                     Differenz
                 </th>
-    
+                <th>
+                    DiffPercent
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -68,6 +70,9 @@
                     <td class="Diff">
     
                     </td>
+                    <td class="DiffPercent">
+
+                    </td>
                 </tr>
                 <% } %>
         </tbody>
@@ -75,6 +80,19 @@
     </table>
     <form action="updatedb" id="updatedb">
         <input type="submit" value="Update DB">
+    </form>
+    <br><br>
+    <form action="create" id="create">
+        <table>
+            <tr>
+                <td><input type="text" name="Name" placeholder="Name" required></td>
+                <td><input type="text" name="Taler" placeholder="Taler" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="Basarwert" placeholder="Basarwert" required></td>
+                <td><input type="submit"></td>
+            </tr>
+        </table>
     </form>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>

@@ -8,7 +8,7 @@ $(function(){
 
         var post_url = $(this).attr("action"); //get form action url
 
-        $('tbody tr').not(':first-child').each(function(index){
+        $('tbody tr').each(function(index){
 
             //console.log($('.Basarwert')[index].childNodes[1].value);
             var Basarwert = $('.Basarwert')[index].childNodes[1].value;
@@ -26,11 +26,26 @@ $(function(){
     
             console.log("Form data: " + form_data);
             $.post( post_url, form_data, function( response ) {
-                console.log( "Response: " + response );
+
+                console.log( response );
+                location.reload();
+
                 });
 
         });
     
+    });
+
+    $('#create').submit(function(e){
+        e.preventDefault();
+
+        var post_url = $(this).attr("action");
+        var form_data = $(this).serialize();
+        $.post( post_url, form_data, function( response ) {
+            console.log( response );
+            location.reload();
+            });
+
     });
 
     $('#Update').click(function(){
@@ -56,6 +71,6 @@ $(function(){
     });
 
     $(document).ready(function() {
-        $('table').DataTable();
+        $('#maintable').DataTable();
     } );
 });
