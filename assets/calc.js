@@ -8,7 +8,7 @@ $(function(){
 
         var post_url = $(this).attr("action"); //get form action url
 
-        $('tbody tr').not(':first-child').each(function(index){
+        $('tbody tr').each(function(index){
 
             //console.log($('.Basarwert')[index].childNodes[1].value);
             var Basarwert = $('.Basarwert')[index].childNodes[1].value;
@@ -27,6 +27,7 @@ $(function(){
     
             $.post( post_url, form_data, function( response ) {
                 console.log( response );
+                location.reload();
                 });
 
         });

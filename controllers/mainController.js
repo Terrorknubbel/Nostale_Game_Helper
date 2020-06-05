@@ -26,6 +26,7 @@ module.exports = function(app){
         con.query(sql, function (err, result) {
             if (err) throw err;
             console.log("1 record updated");
+            res.send("Updated");
          });
 
     });
