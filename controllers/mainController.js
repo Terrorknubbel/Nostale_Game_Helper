@@ -31,4 +31,14 @@ module.exports = function(app){
 
     });
 
+    app.post('/create', function (req, res){
+        console.log(req.body);
+        con.query("INSERT INTO items (Name, Taler, Basarwert) VALUES (?, ?, ?)",[req.body.Name, req.body.Taler, req.body.Basarwert], function (err, result) { 
+            console.log(err);
+            console.log(result);   
+            res.send("Inserted");
+
+         });
+    });
+
 }

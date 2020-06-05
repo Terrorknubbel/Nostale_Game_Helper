@@ -34,6 +34,18 @@ $(function(){
     
     });
 
+    $('#create').submit(function(e){
+        e.preventDefault();
+
+        var post_url = $(this).attr("action");
+        var form_data = $(this).serialize();
+        $.post( post_url, form_data, function( response ) {
+            console.log( response );
+            location.reload();
+            });
+
+    });
+
     $('#Update').click(function(){
         var Talerpreis = $('#Talerpreis').val();
         var Basarwert = $('.Basarwert');
@@ -57,6 +69,6 @@ $(function(){
     });
 
     $(document).ready(function() {
-        $('table').DataTable();
+        $('#maintable').DataTable();
     } );
 });
