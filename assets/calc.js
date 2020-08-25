@@ -18,9 +18,6 @@ $(function(){
         e.preventDefault()
     });
 
-    $('#Basarwert').on("click", "input", function(e){
-
-    });
 
     $('#updatedb').submit(function(e){
         e.preventDefault();
@@ -67,21 +64,31 @@ $(function(){
 
     $('#Update').click(function(){
         var Talerpreis = $('#Talerpreis').val();
-        var Basarwert = $('.Basarwert');
+        var BasarwertEle = $('.Basarwert');
         var Taler = $('.Taler');
+
         for(var i = 0; i < Taler.length; i++){
             var Talerwert = Talerpreis * Taler[i].innerHTML * 1000;
-            document.getElementsByClassName('Talerwert')[i].innerHTML = Talerwert;
+            $('.Talerwert')[i].innerHTML = Talerwert;
 
-            var Diff = Basarwert[i].childNodes[1].value - Talerwert;
-            document.getElementsByClassName('Diff')[i].innerHTML = Diff;
+            var Basarwert = BasarwertEle[i].firstElementChild.value;
+            Basarwert = Basarwert.split(".").join("");
 
-           if(Diff <= 0){
-               document.getElementsByClassName('Kaufen')[i].style.backgroundColor = "red";
-           }else{
-            document.getElementsByClassName('Kaufen')[i].style.backgroundColor = "green";
+            console.log(Basarwert);
+            var Diff = Basarwert - Talerwert;
 
-           }
+            var perc = ((Basarwert/Talerwert) * 100 - 100).toFixed(2) + "%";
+
+            $(".DiffPercent")[i].innerHTML = perc;
+
+            if(Diff <= 0){
+                $('.Kaufen')[i].style.backgroundColor = "red";
+            }else{
+                $('.Kaufen')[i].style.backgroundColor = "green";
+            }
+           Diff = numberWithCommas(Diff);
+
+           $('.Diff')[i].innerHTML = Diff;
         };
 
 
@@ -89,7 +96,8 @@ $(function(){
 
     $(document).ready(function() {
         $('#maintable').DataTable({
-            "paging": false
+            "paging": false,
+            responsive: true
         });
     } );
 });
