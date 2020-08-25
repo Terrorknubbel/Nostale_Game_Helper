@@ -1,6 +1,25 @@
 $(function(){
+
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    var inputs = $(".Basarwert input");
+    $(inputs).each(function(i){
+        var val = parseInt($(this).val());
+        console.log(val);
+        //Use the code in the answer above to replace the commas.
+        val = numberWithCommas(val);
+        $(this).val(val);
+    })
+
+
     $('form').submit(function(e){
         e.preventDefault()
+    });
+
+    $('#Basarwert').on("click", "input", function(e){
+
     });
 
     $('#updatedb').submit(function(e){
@@ -8,31 +27,29 @@ $(function(){
 
         var post_url = $(this).attr("action"); //get form action url
 
-        $('tbody tr').each(function(index){
+        $('#maintable tbody tr').each(function(index){
 
-            //console.log($('.Basarwert')[index].childNodes[1].value);
-            var Basarwert = $('.Basarwert')[index].childNodes[1].value;
+            var Basarwert = $('.Basarwert')[index].firstElementChild.value;
+
+            Basarwert = Basarwert.split(".").join("");
 
             var id = $('.id')[index].innerHTML;
             id = id.replace(/ /g,'');
             id = id.replace(/\r?\n|\r/g,'');
-
-            console.log(id, Basarwert);
 
             var form_data = {
                 'id' : id,
                 'Basarwert' : Basarwert
             }; //Encode form elements for submission
     
-            console.log("Form data: " + form_data);
             $.post( post_url, form_data, function( response ) {
 
                 console.log( response );
-                location.reload();
 
                 });
 
         });
+        location.reload();
     
     });
 

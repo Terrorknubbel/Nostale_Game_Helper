@@ -24,6 +24,8 @@
         <input id="Update" type="submit" value="Update">
     </form>
  
+    <form action="updatedb" id="updatedb">
+
     <table class="display" id="maintable">
         <thead>
             <tr>
@@ -68,7 +70,6 @@
                     </td>
                     <td class="Basarwert">
                         <input type="text" value='<%= items[i].Basarwert %>'>
-                        
                     </td>
                     <td class="Kaufen">
     
@@ -84,8 +85,7 @@
         </tbody>
        
     </table>
-    <form action="updatedb" id="updatedb">
-        <input type="submit" value="Update DB">
+    <input type="submit" value="Update DB">
     </form>
     <br><br>
     <form action="create" id="create">
