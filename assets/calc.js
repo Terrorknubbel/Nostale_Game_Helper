@@ -71,6 +71,8 @@ $(function(){
     });
 
     $(document).ready(function() {
-        $('#maintable').DataTable();
+        $('#maintable').DataTable({
+            "paging": false
+        });
     } );
 });

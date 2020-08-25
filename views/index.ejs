@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/main.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <title>NosBasar Calc</title>
 </head>
 <body>
 
-    <h1>
+    <!-- <h1>
         NosBasar Rechner
-    </h1>
-    <hr>
+    </h1> -->
+    <header>
+        <img id="banner" src="assets/img/banner.png" alt="">
+        <img id="logo" src="assets/img/logo.png" alt="">
+        <h2 id="heading">Taler Trader</h2>
+    </header>
+
     <form action="">
         <input id="Talerpreis" type="text" placeholder="Talerpreis">
         <input id="Update" type="submit" value="Update">
@@ -89,7 +95,7 @@
                 <td><input type="text" name="Taler" placeholder="Taler" required></td>
             </tr>
             <tr>
-                <td><input type="text" name="Basarwert" placeholder="Basarwert" required></td>
+                <td><input type="text" name="Basarwert" placeholder="Basarwert"></td>
                 <td><input type="submit"></td>
             </tr>
         </table>
